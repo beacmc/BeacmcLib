@@ -4,14 +4,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class BeacmcLib extends JavaPlugin {
 
+    private static BeacmcLib instance;
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        instance = this;
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        instance = null;
+    }
+
+    public static BeacmcLib getInstance() {
+        return instance;
     }
 }
